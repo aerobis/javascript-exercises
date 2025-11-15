@@ -1,22 +1,27 @@
-const sumAll = function(num1, num2) {
-    if(num1 > num2){
-        let difference = num1 - num2;
-        let sum = 0;
-        for(let i = 0; i <= differnece; i++){
-            sum += (num2 + i);
+let sumAll = function(lowerLimit, upperLimit){
+    let sum = 0;
+    //Checks
+    if(lowerLimit < upperLimit){
+        for(let i = lowerLimit; i <= upperLimit; i++){
+            sum += i;
         }
-        return sum;
-    }else if (num2 > num1){
-        let difference = num2 - num1;
-        let sum = 0;
-        for(let i = 0; i <= difference; i++){
-            sum += (num1 + i);
-        }
-        return sum;
-    }else if (num1 === num2){
-        return num1 + num2;
     }
-};
+    
+    
+    
+    if(upperLimit < lowerLimit){
+        for(let i = upperLimit; i <= lowerLimit; i++){
+            sum += i;
+        }
+    }
+    
+    
+    console.log(sum);
+    return sum;
+}
+
+sumAll(5,1)
+
 
 // Do not edit below this line
 module.exports = sumAll;
