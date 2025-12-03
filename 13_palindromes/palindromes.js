@@ -1,17 +1,39 @@
-const palindromes = function (string) {
-    let reverse = '';
-    let originalString = string;
-
-    for(let i = string.length - 1; i >= 0; i--){
-        reverse += string[i];
+function checkPalindrome(str){
+  let strArray = str.split("");
+  let arrayLength = strArray.length;
+  let checkableArray = [];
+  
+  for(let i = 0; i < arrayLength; i++){
+    let poppedElement = strArray.pop();
+    if(poppedElement != " " && poppedElement != "."){
+      checkableArray.unshift(poppedElement);
     }
-
-    if(reverse === originalString){
-        return true;
-    }else{
-        return false;
+  }
+  
+  let originalString = checkableArray.join("");
+  let checkableArrayLength = checkableArray.length;
+  
+  let reversedArray = [];
+  
+  for(let i = 0; i < checkableArrayLength; i++ ){
+    let poppedElement = checkableArray.pop();
+    if(poppedElement != " " && poppedElement != "."){
+      reversedArray.push(poppedElement);
     }
-};
+  }
+  
+  let reversedString = reversedArray.join("");
+  
+  if(originalString.toLowerCase() === reversedString.toLowerCase()){
+    return true;
+  }else{
+    return false;
+  }
+  
+}
+
+let result = checkPalindrome(" A nut for a jar of tuna.");
+console.log(result)
 
 // racecar
 
