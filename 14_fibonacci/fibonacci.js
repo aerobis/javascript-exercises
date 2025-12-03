@@ -1,12 +1,23 @@
-const fibonacci = function(index) {
-    if(index == 1){
-        return 1;
-    }else if(index == 2){
-        return 1;
-    }
+function fibonacci(n) {
+  if (n < 1){
+    return "OOPS";
+  }
 
-    return fibonacci(index-1) + fibonacci(index-2);
-};
+  if (n === 1 || n === 2){
+    return 1;
+  }
+  
+  let prev = 1;
+  let current = 1;
+  
+  for (let i = 3; i <= n; i++) {
+    let next = prev + current;
+    prev = current;
+    current = next;
+  }
+  
+  return current;
+}
 
 // Do not edit below this line
 module.exports = fibonacci;
