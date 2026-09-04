@@ -5,11 +5,11 @@ describe('pascal', () => {
     expect(pascal(1)).toEqual([1]);
   });
 
-  test.skip('Gets the second row of pascal', () => {
+  test('Gets the second row of pascal', () => {
     expect(pascal(2)).toEqual([1, 1]);
   });
 
-  test.skip('Gets the third row of pascal', () => {
+  test('Gets the third row of pascal', () => {
     expect(pascal(3)).toEqual([1, 2, 1]);
   });
 
